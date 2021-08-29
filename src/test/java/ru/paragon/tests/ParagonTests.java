@@ -9,7 +9,7 @@ import ru.paragon.tests.pages.ParagonMainPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Личный кабинет")
+
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();
     static Faker faker = new Faker();
@@ -24,6 +24,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
+    @Feature("Личный кабинет")
     @DisplayName("Невозможность логина незарегистрированным пользователем")
     void impossibilityOfRegistrationUnregisteredUsers() {
         startPage.openPage();
@@ -34,6 +35,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
+    @Feature("Личный кабинет")
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -44,6 +46,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
+    @Feature("Личный кабинет")
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -52,6 +55,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
+    @Feature("Личный кабинет")
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -61,6 +65,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
+    @Feature("Личный кабинет")
     @DisplayName("На странице логина есть ссылка Войти")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
