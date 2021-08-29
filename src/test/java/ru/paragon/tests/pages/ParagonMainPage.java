@@ -14,7 +14,7 @@ public class ParagonMainPage {
         open("https://my.paragon-software.com/");
     }
 
-    @Step("Ввести email")
+    @Step("Ввести некорректный email")
     public void enterEmail(String email) {
         $(byXpath("//*[@type='email']")).setValue(email);
     }
