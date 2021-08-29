@@ -45,7 +45,7 @@ public class ParagonTests extends TestBase {
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
-        startPage.changesLocalization("English");
+        startPage.changesLocalization("Русский");
         startPage.checkTitleAuthorizations();
     }
 

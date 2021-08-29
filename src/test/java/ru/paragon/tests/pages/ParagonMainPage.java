@@ -29,16 +29,16 @@ public class ParagonMainPage {
         $(byXpath("//*[@type='submit']")).click();
     }
 
-    @Step("Проверить, что выводится сообщение Покупатель с таким login/пароль - не существует ")
+    @Step("Проверить, что выводится сообщение The email or password you entered is incorrect. Please try again. ")
     public void checkTitleForUnregisteredUser() {
-        $(byXpath("//*[text()='Покупатель с таким login/пароль - не существует']"))
-                .shouldBe(text("Покупатель с таким login/пароль - не существует"));
+        $(byXpath("//*[text()='The email or password you entered is incorrect. Please try again.']"))
+                .shouldBe(text("The email or password you entered is incorrect. Please try again."));
     }
 
-    @Step("Проверить, что выводится сообщение Введите правильный адрес")
+    @Step("Проверить, что выводится сообщение Please enter a valid email address.")
     public void checkTitleForLoginWithIncorrectEmail() {
-        $(byXpath("//*[text()='Введите правильный адрес']"))
-                .shouldBe(text("Введите правильный адрес"));
+        $(byXpath("//*[text()='Please enter a valid email address.']"))
+                .shouldBe(text("Please enter a valid email address."));
     }
 
     @Step("Изменить локализацию на странице")
@@ -48,35 +48,37 @@ public class ParagonMainPage {
 
     }
 
-    @Step("Проверить что на странице текст Авторизация изменился на Sign in")
+    @Step("Проверить что на странице текст с Sign in на Авторизация")
     public void checkTitleAuthorizations() {
-        $(byXpath("//*[@ng-if='!ctrl.isSimpleModeInApp'][text()='Sign in']")).shouldBe(text("Sign in"));
+        $(byXpath("//*[@ng-if='!ctrl.isSimpleModeInApp'][text()='Авторизация']")).shouldBe(text("Авторизация"));
     }
 
-    @Step("Нажать Забыли пароль")
+    @Step("Нажать Forgot password?")
     public void pressGoToResetPassword() {
-        $(byXpath("//a[ text() ='Забыли пароль?']")).click();
+        $(byXpath("//a[ text() ='Forgot password?']")).click();
     }
 
 
-    @Step("Нажать на ссылку Перейти к странице авторизации")
+    @Step("Нажать на ссылку Return to Sign in")
     public void pressEnterReturnToSignIn() {
-        $(byXpath("//a[ text() ='Перейти к странице авторизации']")).click();
+        $(byXpath("//a[ text() ='Return to Sign in']")).click();
     }
 
     @Step("Проверить сообщение на странице авторизации")
     public void checkMessage() {
-        $(byXpath("//*[ text() ='Используйте свой Личный Кабинет для запросов в службу " +
-                "поддержки, для управления лицензиями на программные продукты, для загрузки " +
-                "установочных файлов или обновлений, а также для получения специальных предложений.']"))
-                .shouldBe(text("Используйте свой Личный Кабинет для запросов в службу поддержки," +
-                        " для управления лицензиями на программные продукты, для загрузки установочных " +
-                        "файлов или обновлений, а также для получения специальных предложений."));
+        $(byXpath("//*[ text() ='You can use your personal customer account to submit " +
+                "a support request to the technical support and track the status of your" +
+                " requests, manage your software licenses, download your software or the " +
+                "latest update, or obtain an upgrade at a discount.']"))
+                .shouldBe(text("You can use your personal customer account to submit a " +
+                        "support request to the technical support and track the status " +
+                        "of your requests, manage your software licenses, download your " +
+                        "software or the latest update, or obtain an upgrade at a discount."));
     }
 
-    @Step("Проверить ссылку Войти")
+    @Step("Проверить ссылку Sign in")
     public String checkLinkLogin() {
-        String link = $(byXpath("//a[text() ='Войти']")).getAttribute("href");
+        String link = $(byXpath("//a[text() ='Sign in']")).getAttribute("href");
         return link;
 
     }
