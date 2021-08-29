@@ -18,7 +18,7 @@ public class ParagonTests extends TestBase {
     static void configureBaseUrl() {
         ParagonMainPage startPage = new ParagonMainPage();
         startPage.openPage();
-        startPage.changesLocalization("Русский");
+        startPage.changesLocalization("English");
     }
 
     @Test()
