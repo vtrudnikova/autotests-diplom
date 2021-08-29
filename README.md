@@ -66,4 +66,4 @@ allure serve build/allure-results
 [Telegram channel](https://t.me/auto_tests_paragon)
 
 
-### Видео с записью прохождения тестов:
+### Запись прохождения тестов:
