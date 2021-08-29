@@ -1,7 +1,6 @@
 package ru.paragon.tests;
 
 import com.github.javafaker.Faker;
-import io.qameta.allure.Feature;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,6 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @Feature("Личный кабинет")
     @DisplayName("Невозможность логина незарегистрированным пользователем")
     void impossibilityOfRegistrationUnregisteredUsers() {
         startPage.openPage();
@@ -35,7 +33,6 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @Feature("Личный кабинет")
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -46,7 +43,6 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @Feature("Личный кабинет")
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -55,7 +51,6 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @Feature("Личный кабинет")
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -65,7 +60,6 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @Feature("Личный кабинет")
     @DisplayName("На странице логина есть ссылка Войти")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
