@@ -1,6 +1,7 @@
 package ru.paragon.tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import ru.paragon.tests.pages.ParagonMainPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("Личный кабинет")
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();
     static Faker faker = new Faker();
