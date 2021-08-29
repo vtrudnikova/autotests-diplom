@@ -60,7 +60,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @DisplayName("На странице логина есть ссылка Войти")
+    @DisplayName("На странице логина есть ссылка Sign in")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
         String link = startPage.checkLinkLogin();
