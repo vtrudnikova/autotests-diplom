@@ -67,3 +67,5 @@ allure serve build/allure-results
 
 
 ### Запись прохождения тестов:
+
+![merge_from_ofoct](https://user-images.githubusercontent.com/86876622/131255581-5e0b1ef5-e3f0-4aff-b93d-9807bf8f590d.gif)
