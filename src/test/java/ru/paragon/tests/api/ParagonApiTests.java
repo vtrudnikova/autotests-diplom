@@ -27,7 +27,7 @@ public class ParagonApiTests {
         String sessionId = responseGetSessionId.getSessionId();
         SerialNumberApiResponse response = apiClient.registerWrongSerialNumber(sessionId, serialNumber);
         String message = response.getError();
-        step("Проверить, что вернулось сообщение с текстом {message}", () -> {
+        step("Проверить, что вернулось сообщение с текстом message", () -> {
             assertThat(message).isEqualTo("SERIAL_CODE_NOT_FOUND");
         });
     }
@@ -52,10 +52,10 @@ public class ParagonApiTests {
         KindAndProductConstraintsApiResponse response = apiClient.getKindAndProductConstraints(sessionId);
         String kind = response.getKinds().get(0);
         String productConstraints = response.getProductConstraints().get(1);
-        step("Проверить, что тип {kind} = Technical issue", () -> {
+        step("Проверить, что тип kind = Technical issue", () -> {
             assertThat(kind).isEqualTo("Technical issue");
         });
-        step("Проверить, что тип {productConstraints} = FREE", () -> {
+        step("Проверить, что тип productConstraints = FREE", () -> {
             assertThat(productConstraints).isEqualTo("FREE");
         });
     }
