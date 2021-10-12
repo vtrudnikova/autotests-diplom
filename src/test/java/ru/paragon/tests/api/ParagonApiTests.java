@@ -1,6 +1,8 @@
 package ru.paragon.tests.api;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.paragon.rest.clients.ApiClient;
@@ -14,13 +16,15 @@ import java.util.List;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("API")
+@Feature("API test")
+@Story("Тесты на личный кабинет пользователя")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();
     ApiClient apiClient = new ApiClient();
 
     @Test
+    @AllureId("5270")
     @DisplayName("Нельзя зарегистрировать невалидный серийный номер")
     void cannotRegisterWrongSerialNumber() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
@@ -33,6 +37,7 @@ public class ParagonApiTests {
     }
 
     @Test
+    @AllureId("5268")
     @DisplayName("У нового пользователя нет зарегистрированных продуктов")
     void newUserHasNoRegisteredProducts() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
@@ -45,6 +50,7 @@ public class ParagonApiTests {
     }
 
     @Test
+    @AllureId("5269")
     @DisplayName("Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request")
     void checkKindWithTechnicalIssueTypeAndProductConstraintsWithFreeType() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
