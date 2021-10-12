@@ -28,7 +28,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @AllureId("47018")
+    @AllureId("4408")
     @DisplayName("Невозможность логина незарегистрированным пользователем")
     void impossibilityOfRegistrationUnregisteredUsers() {
         startPage.openPage();
@@ -39,7 +39,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @AllureId("47017")
+    @AllureId("4409")
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -50,7 +50,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @AllureId("47014")
+    @AllureId("4411")
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -59,7 +59,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @AllureId("47016")
+    @AllureId("4407")
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -69,7 +69,7 @@ public class ParagonTests extends TestBase {
     }
 
     @Test()
-    @AllureId("47015")
+    @AllureId("4406")
     @DisplayName("На странице логина есть ссылка Sign in")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
