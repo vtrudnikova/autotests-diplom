@@ -1,5 +1,6 @@
 package ru.paragon.tests.api;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.paragon.rest.clients.ApiClient;
@@ -10,8 +11,10 @@ import ru.paragon.rest.clients.model.SerialNumberApiResponse;
 
 import java.util.List;
 
+import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("API")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();
@@ -24,7 +27,9 @@ public class ParagonApiTests {
         String sessionId = responseGetSessionId.getSessionId();
         SerialNumberApiResponse response = apiClient.registerWrongSerialNumber(sessionId, serialNumber);
         String message = response.getError();
-        assertThat(message).isEqualTo("SERIAL_CODE_NOT_FOUND");
+        step("Проверить, что вернулось сообщение с текстом {message}", () -> {
+            assertThat(message).isEqualTo("SERIAL_CODE_NOT_FOUND");
+        });
     }
 
     @Test
@@ -34,7 +39,9 @@ public class ParagonApiTests {
         String sessionId = responseGetSessionId.getSessionId();
         CustomerProductApiResponse response = apiClient.getListProducts(sessionId);
         List<Object> products = response.getActivatedCustomerSerialCodes();
-        assertThat(products).isEmpty();
+        step("Проверить, что вернулся пустой массив", () -> {
+            assertThat(products).isEmpty();
+        });
     }
 
     @Test
@@ -45,8 +52,12 @@ public class ParagonApiTests {
         KindAndProductConstraintsApiResponse response = apiClient.getKindAndProductConstraints(sessionId);
         String kind = response.getKinds().get(0);
         String productConstraints = response.getProductConstraints().get(1);
-        assertThat(kind).isEqualTo("Technical issue");
-        assertThat(productConstraints).isEqualTo("FREE");
+        step("Проверить, что тип {kind} = Technical issue", () -> {
+            assertThat(kind).isEqualTo("Technical issue");
+        });
+        step("Проверить, что тип {productConstraints} = FREE", () -> {
+            assertThat(productConstraints).isEqualTo("FREE");
+        });
     }
 }
 
