@@ -1,11 +1,12 @@
-package ru.paragon.tests;
+package ru.paragon.tests.ui;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.AllureId;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.paragon.tests.pages.ParagonMainPage;
+import ru.paragon.pages.ParagonMainPage;
+import ru.paragon.tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

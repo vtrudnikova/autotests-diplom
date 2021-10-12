@@ -1,4 +1,4 @@
-package ru.paragon.tests.pages;
+package ru.paragon.pages;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
