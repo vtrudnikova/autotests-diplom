@@ -30,26 +30,32 @@ API:
 - Открыть job 
 - Нажать "Собрать с парметрами" - откроется окно где необходимо выбрать параметры для запуска
 
-![Screenshot_6](https://user-images.githubusercontent.com/86876622/131253248-f38a2e8d-5858-4afd-91ff-1fcb904e3f2b.png)
+![Screenshot_8](https://user-images.githubusercontent.com/86876622/137186014-43dd3957-9dc4-493c-a8b8-f126f3b8ba68.png)
+
 - Нажать собрать
 
-![Screenshot_8](https://user-images.githubusercontent.com/86876622/131253300-7229f3fa-c9f4-4721-a101-15a1b1d79540.png)
+![Screenshot_9](https://user-images.githubusercontent.com/86876622/137186208-2e6fd3ab-a191-4141-b93f-43c40ad22f6d.png)
+![Screenshot_11](https://user-images.githubusercontent.com/86876622/137186646-a83321d6-c2de-427e-8848-6b4c91e1ac22.png)
+
 
 ### Анализ результатов в Jenkins через AllureReports:
-![Screenshot_10](https://user-images.githubusercontent.com/86876622/131253455-399dc8e9-2e9e-4a19-a357-e2208898f1dd.png)
-![Screenshot_11](https://user-images.githubusercontent.com/86876622/131253465-840f3fe1-42ce-43d6-bd54-82225212e8f2.png)
-![Screenshot_12](https://user-images.githubusercontent.com/86876622/131253495-d52ab347-d221-4355-82f4-3e1588abb4dd.png)
+![Screenshot_11](https://user-images.githubusercontent.com/86876622/137186628-d32dce12-341c-4c7c-9c82-b7235e803905.png)
+![Screenshot_12](https://user-images.githubusercontent.com/86876622/137186641-7a11cc47-fd80-4b0e-b08f-78e975a541ce.png)
+![Screenshot_13](https://user-images.githubusercontent.com/86876622/137186644-c7c1eaec-07b3-44bb-8bb6-9b102024fb4c.png)
+
 ### Анализ результатов в Jenkins через Allure TestOPS:
-![Screenshot_13](https://user-images.githubusercontent.com/86876622/131253540-0fd62509-30c7-45f6-a71b-9009ccf8d623.png)
+![Screenshot_13](https://user-images.githubusercontent.com/86876622/137186846-9a26e080-407e-4903-85de-53c3dcea7f57.png)
+![Screenshot_15](https://user-images.githubusercontent.com/86876622/137186851-4f963b05-24a3-4441-8c8e-ec8bd157680c.png)
 
 ### Запуск тестов в Allure TestOPS:
 - Создать тест-план с автоматизированным набором тест-кейсов
+![Screenshot_15](https://user-images.githubusercontent.com/86876622/137187275-ded62b4e-92fd-4696-9083-23ed16737117.png)
 
-![Screenshot_15](https://user-images.githubusercontent.com/86876622/131254008-0d299b53-c237-4c11-9c4b-0e11b734417e.png)
-![Screenshot_16](https://user-images.githubusercontent.com/86876622/131254012-b016be31-b988-4e49-a2bd-e47aba18d44f.png)
+
 - Нажать run - указать имя Launch - нажать Submit
 - Перейти на вкладку Launches
-![Screenshot_18](https://user-images.githubusercontent.com/86876622/131254116-bcc07462-4a7a-4c75-8991-aa5ca415272d.png)
+
+![Screenshot_16](https://user-images.githubusercontent.com/86876622/137187297-4d85f876-bd61-41e9-b081-01efb0a34d7a.png)
 
 Run tests with filled remote.properties:
 ```bash
@@ -68,7 +74,7 @@ allure serve build/allure-results
 
 
 ### После прохождения тестов в telegram канал приходит оповещение с результатом прогона:
-![Screenshot_14](https://user-images.githubusercontent.com/86876622/131253867-f2a9e365-bcfa-44ce-9985-0ee45d3d1478.png)
+![Screenshot_18](https://user-images.githubusercontent.com/86876622/137187379-5b7e61ca-e680-4516-a0d5-e4ccccd0e6f4.png)
 
 [Telegram channel](https://t.me/auto_paragon_tests)
 
