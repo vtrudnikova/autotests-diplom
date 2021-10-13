@@ -1,16 +1,21 @@
 
 # Автотесты на страницу https://my.paragon-software.com/
 ### Cписок автоматизированных тест-кейсов в данном проекте:
+UI:
 - Невозможность логина незарегистрированным пользователем
 - Невозможность логина c некорректным email
 - На странице логина есть ссылка Sign in
 - После изменения локализации текст переведен
 - Можно вернуться к форме авторизации со страницы восстановления пароля
+API:
+- Нельзя зарегистрировать невалидный серийный номер
+- Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request
+- У нового пользователя нет зарегистрированных продуктов
 ### Тест-кейсы в Allure TestOPS:
 ![Screenshot_3](https://user-images.githubusercontent.com/86876622/131252555-44ba0e15-2bfc-426f-87c1-31a071882c37.png)
 
 ### Запуск автотестов в Jenkins:
-[Jobs для запуска](https://jenkins.autotests.cloud/job/start-project-lesson-12/)
+[Jobs для запуска](https://jenkins.autotests.cloud/job/auto-tests-paragon/)
 ### Параметры используемые при запуске тестов:
 * browser (default chrome)
 * browserVersion (default 89.0)
@@ -63,7 +68,7 @@ allure serve build/allure-results
 ### После прохождения тестов в telegram канал приходит оповещение с результатом прогона:
 ![Screenshot_14](https://user-images.githubusercontent.com/86876622/131253867-f2a9e365-bcfa-44ce-9985-0ee45d3d1478.png)
 
-[Telegram channel](https://t.me/auto_tests_paragon)
+[Telegram channel](https://t.me/auto_paragon_tests)
 
 
 ### Запись прохождения тестов:
