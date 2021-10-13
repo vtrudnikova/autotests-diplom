@@ -12,7 +12,7 @@ import ru.paragon.tests.TestBase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("UI test")
+@Feature("UI tests")
 @Story("Тесты на главную страницу личного кабинета")
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();

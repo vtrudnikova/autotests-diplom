@@ -16,7 +16,7 @@ import java.util.List;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("API test")
+@Feature("API tests")
 @Story("Тесты на личный кабинет пользователя")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
