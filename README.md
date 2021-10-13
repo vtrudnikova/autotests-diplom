@@ -13,7 +13,8 @@ API:
 - Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request
 - У нового пользователя нет зарегистрированных продуктов
 ### Тест-кейсы в Allure TestOPS:
-![Screenshot_3](https://user-images.githubusercontent.com/86876622/131252555-44ba0e15-2bfc-426f-87c1-31a071882c37.png)
+![Screenshot_7](https://user-images.githubusercontent.com/86876622/137185778-da70b464-6847-4a1f-8e77-cc194bfda51f.png)
+
 
 ### Запуск автотестов в Jenkins:
 [Jobs для запуска](https://jenkins.autotests.cloud/job/auto-tests-paragon/)
