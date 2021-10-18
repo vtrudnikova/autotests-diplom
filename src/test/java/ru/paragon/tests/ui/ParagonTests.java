@@ -5,9 +5,7 @@ import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.paragon.allure.JiraIssue;
 import ru.paragon.allure.JiraIssues;
 import ru.paragon.allure.Layer;
@@ -36,6 +34,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4408")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
+    @Tags({@Tag("ui"), @Tag("regress")})
     @DisplayName("Невозможность логина незарегистрированным пользователем")
     void impossibilityOfRegistrationUnregisteredUsers() {
         startPage.openPage();
@@ -48,6 +47,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4409")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
+    @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -60,6 +60,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4411")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
+    @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -70,6 +71,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4407")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
+    @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -80,12 +82,12 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4406")
-    @JiraIssues({@JiraIssue("HOMEWORK-0")})
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
+    @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("На странице логина есть ссылка Sign in")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
         String link = startPage.checkLinkLogin();
         assertThat(link).isEqualTo("https://my.paragon-software.com/#/login");
-
     }
 }
