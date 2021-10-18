@@ -69,7 +69,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4407")
-    @JiraIssues({@JiraIssue("HOMEWORK-0")})
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
