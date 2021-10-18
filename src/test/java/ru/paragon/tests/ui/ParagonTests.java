@@ -47,7 +47,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4409")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
-    @Tags({@Tag("api"), @Tag("regress")})
+    @Tags({@Tag("ui"), @Tag("regress")})
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -60,7 +60,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4411")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
-    @Tags({@Tag("api"), @Tag("regress")})
+    @Tags({@Tag("ui"), @Tag("regress")})
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -71,7 +71,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4407")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
-    @Tags({@Tag("api"), @Tag("regress")})
+    @Tags({@Tag("ui"), @Tag("regress")})
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -83,7 +83,7 @@ public class ParagonTests extends TestBase {
     @Test()
     @AllureId("4406")
     @JiraIssues({@JiraIssue("HOMEWORK-255")})
-    @Tags({@Tag("api"), @Tag("regress")})
+    @Tags({@Tag("ui"), @Tag("regress")})
     @DisplayName("На странице логина есть ссылка Sign in")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
