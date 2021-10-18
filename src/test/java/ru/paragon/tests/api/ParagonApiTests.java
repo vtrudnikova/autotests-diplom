@@ -2,6 +2,7 @@ package ru.paragon.tests.api;
 
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Feature("API tests")
 @Story("Тесты на личный кабинет пользователя")
 @Layer("rest")
+@Owner("vtrudnikova")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();
