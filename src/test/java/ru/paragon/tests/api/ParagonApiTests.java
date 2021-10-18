@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("API tests")
 @Story("Тесты на личный кабинет пользователя")
-@Layer("API")
+@Layer("rest")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();

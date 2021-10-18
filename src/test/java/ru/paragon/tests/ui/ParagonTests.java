@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("UI tests")
 @Story("Тесты на главную страницу личного кабинета")
-@Layer("UI")
+@Layer("web")
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();
     static Faker faker = new Faker();
