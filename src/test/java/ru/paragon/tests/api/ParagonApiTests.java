@@ -5,6 +5,9 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.paragon.allure.JiraIssue;
+import ru.paragon.allure.JiraIssues;
+import ru.paragon.allure.Layer;
 import ru.paragon.rest.clients.ApiClient;
 import ru.paragon.rest.clients.model.CustomerProductApiResponse;
 import ru.paragon.rest.clients.model.CustomerSessionApiResponse;
@@ -18,6 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("API tests")
 @Story("Тесты на личный кабинет пользователя")
+@Layer("API")
 public class ParagonApiTests {
     String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();
@@ -25,6 +29,7 @@ public class ParagonApiTests {
 
     @Test
     @AllureId("5270")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Нельзя зарегистрировать невалидный серийный номер")
     void cannotRegisterWrongSerialNumber() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
@@ -38,6 +43,7 @@ public class ParagonApiTests {
 
     @Test
     @AllureId("5268")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("У нового пользователя нет зарегистрированных продуктов")
     void newUserHasNoRegisteredProducts() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
@@ -51,6 +57,7 @@ public class ParagonApiTests {
 
     @Test
     @AllureId("5269")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request")
     void checkKindWithTechnicalIssueTypeAndProductConstraintsWithFreeType() {
         CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);

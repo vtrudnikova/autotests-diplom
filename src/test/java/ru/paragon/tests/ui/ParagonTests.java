@@ -7,6 +7,9 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.paragon.allure.JiraIssue;
+import ru.paragon.allure.JiraIssues;
+import ru.paragon.allure.Layer;
 import ru.paragon.pages.ParagonMainPage;
 import ru.paragon.tests.TestBase;
 
@@ -14,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("UI tests")
 @Story("Тесты на главную страницу личного кабинета")
+@Layer("UI")
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();
     static Faker faker = new Faker();
@@ -29,6 +33,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4408")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Невозможность логина незарегистрированным пользователем")
     void impossibilityOfRegistrationUnregisteredUsers() {
         startPage.openPage();
@@ -40,6 +45,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4409")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Невозможность логина c некорректным email")
     void impossibilityOfLoginWithIncorrectEmail() {
         startPage.openPage();
@@ -51,6 +57,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4411")
+    @JiraIssues({@JiraIssue("HOMEWORK-255")})
     @DisplayName("Можно изменить локализацию")
     void checkLocalizationChange() {
         startPage.openPage();
@@ -60,6 +67,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4407")
+    @JiraIssues({@JiraIssue("HOMEWORK-0")})
     @DisplayName("Можно вернуться к форме авторизации со страницы восстановления пароля")
     void returnToAuthorizationPageFromTheResetPasswordPage() {
         startPage.openPage();
@@ -70,6 +78,7 @@ public class ParagonTests extends TestBase {
 
     @Test()
     @AllureId("4406")
+    @JiraIssues({@JiraIssue("HOMEWORK-0")})
     @DisplayName("На странице логина есть ссылка Sign in")
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
