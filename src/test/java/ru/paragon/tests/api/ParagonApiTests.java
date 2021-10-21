@@ -13,9 +13,9 @@ import ru.paragon.allure.JiraIssues;
 import ru.paragon.allure.Layer;
 import ru.paragon.rest.clients.ApiClient;
 import ru.paragon.rest.clients.model.CustomerProductApiResponse;
-import ru.paragon.rest.clients.model.CustomerSessionApiResponse;
 import ru.paragon.rest.clients.model.KindAndProductConstraintsApiResponse;
 import ru.paragon.rest.clients.model.SerialNumberApiResponse;
+import ru.paragon.tests.TestBaseApi;
 
 import java.util.List;
 
@@ -27,9 +27,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Layer("rest")
 @Owner("vtrudnikova")
 public class ParagonApiTests {
-    String email = "pegafragaka-2961@yopmail.com";
     Long serialNumber = System.currentTimeMillis();
     ApiClient apiClient = new ApiClient();
+    TestBaseApi testBaseApi = new TestBaseApi();
+
 
     @Test
     @AllureId("5270")
@@ -37,8 +38,7 @@ public class ParagonApiTests {
     @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("Нельзя зарегистрировать невалидный серийный номер")
     void cannotRegisterWrongSerialNumber() {
-        CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
-        String sessionId = responseGetSessionId.getSessionId();
+        String sessionId = testBaseApi.getSessionId();
         SerialNumberApiResponse response = apiClient.registerWrongSerialNumber(sessionId, serialNumber);
         String message = response.getError();
         step("Проверить, что вернулось сообщение с текстом message", () -> {
@@ -52,8 +52,7 @@ public class ParagonApiTests {
     @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("У нового пользователя нет зарегистрированных продуктов")
     void newUserHasNoRegisteredProducts() {
-        CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
-        String sessionId = responseGetSessionId.getSessionId();
+        String sessionId = testBaseApi.getSessionId();
         CustomerProductApiResponse response = apiClient.getListProducts(sessionId);
         List<Object> products = response.getActivatedCustomerSerialCodes();
         step("Проверить, что вернулся пустой массив", () -> {
@@ -67,8 +66,7 @@ public class ParagonApiTests {
     @Tags({@Tag("api"), @Tag("regress")})
     @DisplayName("Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request")
     void checkKindWithTechnicalIssueTypeAndProductConstraintsWithFreeType() {
-        CustomerSessionApiResponse responseGetSessionId = apiClient.getSessionCustomer(email);
-        String sessionId = responseGetSessionId.getSessionId();
+        String sessionId = testBaseApi.getSessionId();
         KindAndProductConstraintsApiResponse response = apiClient.getKindAndProductConstraints(sessionId);
         String kind = response.getKinds().get(0);
         String productConstraints = response.getProductConstraints().get(1);
@@ -80,4 +78,3 @@ public class ParagonApiTests {
         });
     }
 }
-
