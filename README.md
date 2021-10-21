@@ -52,8 +52,7 @@ API:
 ![Screenshot_3](https://user-images.githubusercontent.com/86876622/138347319-bbcc362e-6d7a-471f-86c4-794b35b83a48.png)
 
 - Нажать run - указать имя Launch/ссылку на задачу в jira - нажать Submit
-![Screenshot_6](https://user-images.githubusercontent.com/86876622/138349216-7d54f36c-7356-4710-b022-458fd4e1ea00.png)
-
+![Screenshot_9](https://user-images.githubusercontent.com/86876622/138350998-1e404d0a-3c03-4d48-aef6-84cddfa6af5b.png)
 
 - Перейти на вкладку Launches
 
