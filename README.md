@@ -55,7 +55,6 @@ API:
 ![Screenshot_9](https://user-images.githubusercontent.com/86876622/138350998-1e404d0a-3c03-4d48-aef6-84cddfa6af5b.png)
 
 - Перейти на вкладку Launches
-
 ![Screenshot_8](https://user-images.githubusercontent.com/86876622/138350717-212a3213-ff08-4692-a3f9-1425d26d7053.png)
 
 
