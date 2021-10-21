@@ -13,7 +13,7 @@ API:
 - Проверить, что есть kind с типом Technical issue и productConstraints с типом Free для new request
 - У нового пользователя нет зарегистрированных продуктов
 ### Тест-кейсы в Allure TestOPS:
-![Screenshot_7](https://user-images.githubusercontent.com/86876622/137185778-da70b464-6847-4a1f-8e77-cc194bfda51f.png)
+![Screenshot_1](https://user-images.githubusercontent.com/86876622/138346171-e23036a5-53cf-48ea-adb0-eec55bd9e0d0.png)
 
 
 ### Запуск автотестов в Jenkins:
@@ -44,18 +44,21 @@ API:
 ![Screenshot_13](https://user-images.githubusercontent.com/86876622/137186644-c7c1eaec-07b3-44bb-8bb6-9b102024fb4c.png)
 
 ### Анализ результатов в Jenkins через Allure TestOPS:
-![Screenshot_13](https://user-images.githubusercontent.com/86876622/137186846-9a26e080-407e-4903-85de-53c3dcea7f57.png)
-![Screenshot_15](https://user-images.githubusercontent.com/86876622/137186851-4f963b05-24a3-4441-8c8e-ec8bd157680c.png)
+![Screenshot_2](https://user-images.githubusercontent.com/86876622/138347069-ce7a492a-22d2-47f6-a6f7-a7eec8f78595.png)
+
 
 ### Запуск тестов в Allure TestOPS:
 - Создать тест-план с автоматизированным набором тест-кейсов
-![Screenshot_15](https://user-images.githubusercontent.com/86876622/137187275-ded62b4e-92fd-4696-9083-23ed16737117.png)
+![Screenshot_3](https://user-images.githubusercontent.com/86876622/138347319-bbcc362e-6d7a-471f-86c4-794b35b83a48.png)
+
+Нажать run - указать имя Launch/ссылку на задачу в jira - нажать Submit
+![Screenshot_6](https://user-images.githubusercontent.com/86876622/138349216-7d54f36c-7356-4710-b022-458fd4e1ea00.png)
 
 
-- Нажать run - указать имя Launch - нажать Submit
 - Перейти на вкладку Launches
 
-![Screenshot_16](https://user-images.githubusercontent.com/86876622/137187297-4d85f876-bd61-41e9-b081-01efb0a34d7a.png)
+![Screenshot_8](https://user-images.githubusercontent.com/86876622/138350717-212a3213-ff08-4692-a3f9-1425d26d7053.png)
+
 
 Run tests with filled remote.properties:
 ```bash
@@ -71,7 +74,8 @@ Serve report:
 ```bash
 allure serve build/allure-results
 ```
-
+### Отображаение результатов в jira:
+![Screenshot_7](https://user-images.githubusercontent.com/86876622/138350545-a41579ec-d5eb-45e4-8729-3040d8c2419f.png)
 
 ### После прохождения тестов в telegram канал приходит оповещение с результатом прогона:
 ![Screenshot_18](https://user-images.githubusercontent.com/86876622/137187379-5b7e61ca-e680-4516-a0d5-e4ccccd0e6f4.png)
