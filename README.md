@@ -77,7 +77,7 @@ allure serve build/allure-results
 ### После прохождения тестов в telegram канал приходит оповещение с результатом прогона:
 ![Screenshot_18](https://user-images.githubusercontent.com/86876622/137187379-5b7e61ca-e680-4516-a0d5-e4ccccd0e6f4.png)
 
-[Telegram channel](https://t.me/auto_paragon_tests)
+[Telegram channel](https://t.me/joinchat/T7jDYS6Vurc3ZWRi)
 
 
 ### Запись прохождения тестов:
