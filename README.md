@@ -29,8 +29,7 @@ API:
 ### Запуск тестов в Jenkins:
 - Открыть job 
 - Нажать "Собрать с парметрами" - откроется окно где необходимо выбрать параметры для запуска
-
-![Screenshot_8](https://user-images.githubusercontent.com/86876622/137186014-43dd3957-9dc4-493c-a8b8-f126f3b8ba68.png)
+![Screenshot_1](https://user-images.githubusercontent.com/86876622/138557255-b201b297-b6a0-4204-b7ca-190c6aebbff9.png)
 
 - Нажать собрать
 
