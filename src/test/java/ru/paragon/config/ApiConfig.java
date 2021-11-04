@@ -6,6 +6,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "system:properties",
         "classpath:config/api.properties",
+        "classpath:config/remote.properties"
 })
 public interface ApiConfig extends Config {
     @Config.Key("url")
