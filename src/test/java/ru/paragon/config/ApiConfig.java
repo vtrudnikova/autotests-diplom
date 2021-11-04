@@ -14,6 +14,14 @@ public interface ApiConfig extends Config {
     @Config.Key("urlPrefix")
     String urlPrefix();
 
+    @Config.Key("clientId")
+    String clientId();
+
+    @Config.Key("pwdHash")
+    String pwdHash();
+
+    @Config.Key("email")
+    String email();
 }
 
 
