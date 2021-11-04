@@ -20,13 +20,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("vtrudnikova")
 public class ParagonTests extends TestBase {
     ParagonMainPage startPage = new ParagonMainPage();
-    static Faker faker = new Faker();
-    public String emailAddress = faker.internet().emailAddress();
-    public String passWord = "Qwerty111";
+    Faker faker = new Faker();
+    private String emailAddress = faker.internet().emailAddress();
+    private String passWord = "Qwerty111";
+    private String infoMessage = "You can use your personal customer account to submit a support" +
+            " request to the technical support and track the status of your requests, manage your software licenses," +
+            " download your software or the latest update, or obtain an upgrade at a discount.";
 
-    @BeforeAll
-    static void configureBaseUrl() {
-        ParagonMainPage startPage = new ParagonMainPage();
+    @BeforeEach
+    void configureBaseUrl() {
         startPage.openPage();
         startPage.changesLocalization("English");
     }
@@ -66,6 +68,8 @@ public class ParagonTests extends TestBase {
         startPage.openPage();
         startPage.changesLocalization("Русский");
         startPage.checkTitleAuthorizations();
+        String language = startPage.checkTitleAuthorizations();
+        assertThat("Русский").isEqualTo(language);
     }
 
     @Test()
@@ -78,6 +82,8 @@ public class ParagonTests extends TestBase {
         startPage.pressGoToResetPassword();
         startPage.pressEnterReturnToSignIn();
         startPage.checkMessage();
+        String message = startPage.checkMessage();
+        assertThat(infoMessage).isEqualTo(message);
     }
 
     @Test()
@@ -88,6 +94,6 @@ public class ParagonTests extends TestBase {
     void theLoginPageContainsTheLoginLink() {
         startPage.openPage();
         String link = startPage.checkLinkLogin();
-        assertThat(link).isEqualTo("https://my.paragon-software.com/#/login");
+        assertThat("https://my.paragon-software.com/#/login").isEqualTo(link);
     }
 }

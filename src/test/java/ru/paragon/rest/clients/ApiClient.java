@@ -16,7 +16,7 @@ public class ApiClient {
     static ApiConfig config = ConfigFactory.create(ApiConfig.class);
     String clientId = "2afa3e45-496a-49fe-9d64-fa09e8c4b828";
     String pwdHash = "345990f25d98835092dd48738db17b2223b100ccf9794de9a28c062c193b1a80b62377c07995b0ff02df92e8403530cc1ace2e51a26bb01db1526a33149ee99e";
-    String urlPrefix = "https://my.paragon-software.com/#/password-reset?email=pegafragaka-2961@yopmail.com&code=";
+    String urlPrefix = config.urlPrefix() + "#/password-reset?email=pegafragaka-2961@yopmail.com&code=";
     String email = "pegafragaka-2961@yopmail.com";
 
     @Step("Получить sessionId пользователя")

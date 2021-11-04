@@ -1,12 +1,15 @@
 package ru.paragon.pages;
 
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.exactOwnText;
+import static com.codeborne.selenide.Selectors.byId;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ParagonMainPage {
     @Step("Открыть главную страницу сайта")
@@ -16,70 +19,62 @@ public class ParagonMainPage {
 
     @Step("Ввести некорректный email")
     public void enterEmail(String email) {
-        $(byXpath("//*[@type='email']")).setValue(email);
+        $(byId("login-form-email")).setValue(email);
     }
 
     @Step("Ввести пароль")
     public void enterPassword(String password) {
-        $(byXpath("//*[@type='password']")).setValue(password);
+        $(byId("login-form-password")).setValue(password);
     }
 
     @Step("Нажать кнопку Войти")
     public void pressSubmit() {
-        $(byXpath("//*[@type='submit']")).click();
+        $x("//*[@class='btn btn-primary ng-binding'][text()='Sign in']").click();
     }
 
     @Step("Проверить, что выводится сообщение The email or password you entered is incorrect. Please try again. ")
     public void checkTitleForUnregisteredUser() {
-        $(byXpath("//*[text()='The email or password you entered is incorrect. Please try again.']"))
-                .shouldBe(text("The email or password you entered is incorrect. Please try again."));
+        $x("//div[@ng-bind-html='$alert.text']")
+                .shouldHave(exactOwnText("The email or password you entered is incorrect. Please try again."));
     }
 
     @Step("Проверить, что выводится сообщение Please enter a valid email address.")
     public void checkTitleForLoginWithIncorrectEmail() {
-        $(byXpath("//*[text()='Please enter a valid email address.']"))
-                .shouldBe(text("Please enter a valid email address."));
+        $x("//div[@ng-bind-html='$alert.text']")
+                .shouldHave(exactOwnText("Please enter a valid email address."));
     }
 
     @Step("Изменить локализацию на странице")
     public void changesLocalization(String language) {
-        Selenide.$x("//*[@class='glyphicon glyphicon-globe']").click();
-        Selenide.$x(String.format("//a[text() = '%s']",language)).click();
-
+        $x("//*[@class='glyphicon glyphicon-globe']").click();
+        $(byText(language)).click();
     }
 
-    @Step("Проверить что на странице текст с Sign in на Авторизация")
-    public void checkTitleAuthorizations() {
-        $(byXpath("//*[@ng-if='!ctrl.isSimpleModeInApp'][text()='Авторизация']")).shouldBe(text("Авторизация"));
+    @Step("Проверить что на странице текст поменялся с Sign in на Авторизация")
+    public String checkTitleAuthorizations() {
+        SelenideElement language = $x("//span[@ng-bind='locale.selectedLanguage.name']");
+        language.shouldBe(Condition.matchText("Русский"), Duration.ofMillis(3000));
+        return language.getText();
     }
 
     @Step("Нажать Forgot password?")
     public void pressGoToResetPassword() {
-        $(byXpath("//a[ text() ='Forgot password?']")).click();
+        $(byText("Forgot password?")).click();
     }
-
 
     @Step("Нажать на ссылку Return to Sign in")
     public void pressEnterReturnToSignIn() {
-        $(byXpath("//a[ text() ='Return to Sign in']")).click();
+        $(byText("Return to Sign in")).click();
     }
 
     @Step("Проверить сообщение на странице авторизации")
-    public void checkMessage() {
-        $(byXpath("//*[ text() ='You can use your personal customer account to submit " +
-                "a support request to the technical support and track the status of your" +
-                " requests, manage your software licenses, download your software or the " +
-                "latest update, or obtain an upgrade at a discount.']"))
-                .shouldBe(text("You can use your personal customer account to submit a " +
-                        "support request to the technical support and track the status " +
-                        "of your requests, manage your software licenses, download your " +
-                        "software or the latest update, or obtain an upgrade at a discount."));
+    public String checkMessage() {
+        SelenideElement message = $x("//*[@ng-if='!(ctrl.isSimpleModeInApp || ctrl.isFreeLicenseState)']");
+        return message.getText();
     }
 
     @Step("Проверить ссылку Sign in")
     public String checkLinkLogin() {
-        String link = $(byXpath("//a[text() ='Sign in']")).getAttribute("href");
-        return link;
-
+        return $(byText("Sign in")).getAttribute("href");
     }
 }
