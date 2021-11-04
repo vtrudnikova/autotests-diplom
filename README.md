@@ -1,3 +1,4 @@
+![Screenshot_4](https://user-images.githubusercontent.com/86876622/140352165-0f50d9c0-e887-4c99-b838-003929cdb511.png)
 
 # Автотесты на страницу https://my.paragon-software.com/
 ### Cписок автоматизированных тест-кейсов в данном проекте:
